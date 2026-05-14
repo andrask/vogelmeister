@@ -18,21 +18,22 @@ export const BirdCard: React.FC<BirdCardProps> = ({ bird, className }) => {
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <motion.div
-        className="w-full h-full relative preserve-3d transition-transform duration-500"
+        className="w-full h-full relative preserve-3d will-change-transform"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 25 }}
       >
         {/* Front */}
         <div className={cn(
-          "absolute inset-0 backface-hidden rounded-3xl overflow-hidden bg-white shadow-xl shadow-brand-olive/5 border border-brand-olive/10 flex flex-col"
+          "absolute inset-0 backface-hidden rounded-3xl overflow-hidden bg-white shadow-lg border border-brand-olive/10 flex flex-col"
         )}>
           <div className="relative flex-1 overflow-hidden">
             <img 
               src={bird.imageUrl} 
               alt={bird.germanName} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6">

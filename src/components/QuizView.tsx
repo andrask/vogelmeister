@@ -86,9 +86,10 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
         <motion.div
-           initial={{ scale: 0.9, opacity: 0 }}
+           initial={{ scale: 0.95, opacity: 0 }}
            animate={{ scale: 1, opacity: 1 }}
-           className="bg-white p-12 rounded-[3rem] shadow-2xl border border-brand-olive/10 max-w-lg w-full"
+           transition={{ duration: 0.3 }}
+           className="bg-white p-12 rounded-[3rem] shadow-xl border border-brand-olive/10 max-w-lg w-full"
         >
           <div className="w-20 h-20 rounded-full bg-brand-olive/10 flex items-center justify-center mx-auto mb-6 text-brand-olive font-serif italic text-3xl">
             {Math.round((score / questions.length) * 100)}%

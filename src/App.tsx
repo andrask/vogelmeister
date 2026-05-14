@@ -48,9 +48,9 @@ export default function App() {
       </nav>
 
       <main className="pt-24 pb-12 relative overflow-hidden">
-        {/* Subtle background decoration */}
-        <div className="absolute top-[-10%] right-[-5%] w-[40%] aspect-square bg-brand-olive/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[30%] aspect-square bg-brand-olive/3 rounded-full blur-2xl -z-10" />
+        {/* Simplified background decoration */}
+        <div className="absolute top-[-10%] right-[-5%] w-[40%] aspect-square rounded-full bg-brand-olive/[0.03] -z-10" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[30%] aspect-square rounded-full bg-brand-olive/[0.02] -z-10" />
 
         <AnimatePresence mode="wait">
           <motion.div

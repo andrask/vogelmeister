@@ -43,13 +43,13 @@ export const StudyView: React.FC<StudyViewProps> = ({ onBack }) => {
         </button>
 
         <div className="w-full max-w-sm">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
               key={BIRDS[currentIndex].id}
-              initial={{ x: 20, opacity: 0 }}
+              initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -20, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              exit={{ x: -50, opacity: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
             >
               <BirdCard bird={BIRDS[currentIndex]} />
             </motion.div>
