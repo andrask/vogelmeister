@@ -33,6 +33,10 @@ export const updateBirdStat = (birdId: string, isCorrect: boolean) => {
   localStorage.setItem(STATS_KEY, JSON.stringify(stats));
 };
 
+export const resetStats = () => {
+  localStorage.removeItem(STATS_KEY);
+};
+
 export const getBirdStatus = (birdId: string): 'known' | 'mistaken' | 'new' => {
   const stats = getStats();
   const bird = stats[birdId];

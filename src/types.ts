@@ -11,9 +11,10 @@ export interface Bird {
   names: Record<Language, string>;
   description: string;
   imageUrls: string[];
+  vogelwarteUrl?: string;
 }
 
-export type AppState = 'Selection' | 'Study' | 'Quiz' | 'LanguageSelection';
+export type AppState = 'Selection' | 'Study' | 'Quiz' | 'LanguageSelection' | 'Stats';
 
 export interface QuizQuestion {
   bird: Bird;

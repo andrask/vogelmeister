@@ -10,7 +10,7 @@ interface QuizViewProps {
   language: Language;
 }
 
-import { updateBirdStat } from '../lib/stats';
+import { updateBirdStat, getStats } from '../lib/stats';
 
 export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   const QUESTIONS_PER_SESSION = 10;
@@ -20,30 +20,62 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isFinished, setIsFinished] = useState(false);
 
+  // Helper to generate quiz questions based on specific criteria
+  const generateQuizQuestions = () => {
+    window.scrollTo(0, 0);
+    const stats = getStats();
+    
+    // Categorize birds
+    const mistakenBirds = BIRDS.filter(b => {
+      const birdStats = stats[b.id];
+      return birdStats && birdStats.incorrect >= 1 && (birdStats.correct <= birdStats.incorrect || birdStats.correct < 2);
+    }).sort(() => Math.random() - 0.5);
+
+    const newBirds = BIRDS.filter(b => !stats[b.id]).sort(() => Math.random() - 0.5);
+    
+    // Selection process
+    const selectedBirds: Bird[] = [];
+    
+    // 1. Up to 5 mistaken birds
+    selectedBirds.push(...mistakenBirds.slice(0, 5));
+    
+    // 2. Up to 5 new birds
+    selectedBirds.push(...newBirds.slice(0, 5));
+    
+    // 3. Fill the rest randomly
+    const remainingBirds = BIRDS.filter(b => !selectedBirds.find(sb => sb.id === b.id))
+      .sort(() => Math.random() - 0.5);
+    
+    const needed = QUESTIONS_PER_SESSION - selectedBirds.length;
+    if (needed > 0) {
+      selectedBirds.push(...remainingBirds.slice(0, needed));
+    }
+
+    // Final shuffle of the 10 selected birds so mistaken ones aren't always first
+    const finalSelection = selectedBirds.slice(0, QUESTIONS_PER_SESSION).sort(() => Math.random() - 0.5);
+
+    const quizQuestions = finalSelection.map((bird) => {
+      const others = BIRDS.filter((b) => b.id !== bird.id)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map((b) => b.germanName);
+      
+      const options = [...others, bird.germanName].sort(() => Math.random() - 0.5);
+      const randomImage = bird.imageUrls[Math.floor(Math.random() * bird.imageUrls.length)];
+      
+      return {
+        bird: { ...bird, imageUrl: randomImage },
+        options,
+        correctAnswer: bird.germanName,
+      };
+    });
+    
+    return quizQuestions;
+  };
+
   // Initialize quiz
   useEffect(() => {
-    const generateQuiz = () => {
-      window.scrollTo(0, 0);
-      const shuffled = [...BIRDS].sort(() => Math.random() - 0.5).slice(0, QUESTIONS_PER_SESSION);
-      const quizQuestions = shuffled.map((bird) => {
-        const others = BIRDS.filter((b) => b.id !== bird.id)
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 3)
-          .map((b) => b.germanName);
-        
-        const options = [...others, bird.germanName].sort(() => Math.random() - 0.5);
-        const randomImage = bird.imageUrls[Math.floor(Math.random() * bird.imageUrls.length)];
-        
-        return {
-          bird: { ...bird, imageUrl: randomImage }, // Override imageUrl for the question
-          options,
-          correctAnswer: bird.germanName,
-        };
-      });
-      setQuestions(quizQuestions);
-    };
-
-    generateQuiz();
+    setQuestions(generateQuizQuestions());
   }, []);
 
   const handleSelect = (option: string) => {
@@ -68,24 +100,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   };
 
   const restart = () => {
-    window.scrollTo(0, 0);
-    const shuffled = [...BIRDS].sort(() => Math.random() - 0.5).slice(0, QUESTIONS_PER_SESSION);
-    const quizQuestions = shuffled.map((bird) => {
-      const others = BIRDS.filter((b) => b.id !== bird.id)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3)
-        .map((b) => b.germanName);
-      
-      const options = [...others, bird.germanName].sort(() => Math.random() - 0.5);
-      const randomImage = bird.imageUrls[Math.floor(Math.random() * bird.imageUrls.length)];
-      
-      return {
-        bird: { ...bird, imageUrl: randomImage },
-        options,
-        correctAnswer: bird.germanName,
-      };
-    });
-    setQuestions(quizQuestions);
+    setQuestions(generateQuizQuestions());
     setCurrentIndex(0);
     setScore(0);
     setSelectedOption(null);
@@ -150,7 +165,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
         <img 
           src={current.bird.imageUrl} 
           alt="Vogel bestimmen" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-olive/10">

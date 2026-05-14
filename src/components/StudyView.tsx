@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BIRDS } from '../constants';
 import { BirdCard } from './BirdCard';
-import { ChevronLeft, ChevronRight, X, SortAsc, Shuffle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, SortAsc, Shuffle, AlertCircle } from 'lucide-react';
 import { Language } from '../types';
+import { getStats } from '../lib/stats';
 
 interface StudyViewProps {
   onBack: () => void;
@@ -19,12 +20,28 @@ export const StudyView: React.FC<StudyViewProps> = ({ onBack, language }) => {
     window.scrollTo(0, 0);
   }, [isStarted]);
 
-  const startSession = (mode: 'alphabetical' | 'random') => {
+  const startSession = (mode: 'alphabetical' | 'random' | 'mistaken') => {
     let list = [...BIRDS];
     if (mode === 'random') {
       list = list.sort(() => Math.random() - 0.5);
-    } else {
+    } else if (mode === 'alphabetical') {
       list = list.sort((a, b) => a.germanName.localeCompare(b.germanName, 'de'));
+    } else if (mode === 'mistaken') {
+      const stats = getStats();
+      
+      const mistakenBirds = list.filter(b => {
+        const birdStats = stats[b.id];
+        return birdStats && birdStats.incorrect >= 1 && (birdStats.correct <= birdStats.incorrect || birdStats.correct < 2);
+      }).sort(() => Math.random() - 0.5);
+
+      const newBirds = list.filter(b => !stats[b.id]).sort(() => Math.random() - 0.5);
+      
+      const others = list.filter(b => 
+        !mistakenBirds.find(m => m.id === b.id) && 
+        !newBirds.find(n => n.id === b.id)
+      ).sort(() => Math.random() - 0.5);
+
+      list = [...mistakenBirds, ...newBirds, ...others];
     }
     setOrderedBirds(list);
     setIsStarted(true);
@@ -50,7 +67,7 @@ export const StudyView: React.FC<StudyViewProps> = ({ onBack, language }) => {
           <p className="text-brand-olive/60">Wähle eine Reihenfolge für deine Lernkarten</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-3xl">
           <motion.button
             whileHover={{ y: -4, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -69,8 +86,23 @@ export const StudyView: React.FC<StudyViewProps> = ({ onBack, language }) => {
           <motion.button
             whileHover={{ y: -4, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => startSession('mistaken')}
+            className="p-8 rounded-3xl bg-orange-50 border border-orange-100 shadow-sm hover:shadow-md transition-all text-left flex flex-col gap-4 group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-serif italic text-brand-ink mb-1">Lern-Fokus</h3>
+              <p className="text-xs text-orange-600/60 font-medium uppercase tracking-wider">Fehler & neue zuerst</p>
+            </div>
+          </motion.button>
+
+          <motion.button
+            whileHover={{ y: -4, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => startSession('random')}
-            className="p-8 rounded-3xl bg-brand-olive text-white shadow-xl shadow-brand-olive/20 text-left flex flex-col gap-4 group"
+            className="p-8 rounded-3xl bg-brand-olive text-white shadow-xl shadow-brand-olive/20 text-left flex flex-col gap-4 group sm:col-span-2 lg:col-span-1"
           >
             <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white group-hover:bg-white group-hover:text-brand-olive transition-colors">
               <Shuffle className="w-6 h-6" />

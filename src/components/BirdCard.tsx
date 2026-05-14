@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Bird as BirdType, Language } from '../types';
 import { cn } from '../lib/utils';
-import { RotateCw, Bird, ChevronLeft, ChevronRight, CheckCircle2, AlertCircle, Eye, EyeOff, Info, X } from 'lucide-react';
+import { RotateCw, Bird, ChevronLeft, ChevronRight, CheckCircle2, AlertCircle, Eye, EyeOff, Info, X, ExternalLink } from 'lucide-react';
 import { getBirdStatus, getStats } from '../lib/stats';
 
 interface BirdCardProps {
@@ -39,6 +39,15 @@ export const BirdCard: React.FC<BirdCardProps> = ({ bird, language, className })
     e.stopPropagation();
     setShowStatusInfo(true);
   };
+
+  const fallbackUrl = `https://www.vogelwarte.ch/de/vogel-der-schweiz/${bird.germanName.toLowerCase()
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/\s+/g, '-')}`;
+
+  const vogelwarteUrl = bird.vogelwarteUrl || fallbackUrl;
 
   return (
     <div 
@@ -134,23 +143,23 @@ export const BirdCard: React.FC<BirdCardProps> = ({ bird, language, className })
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
                 loading="eager"
               />
             </AnimatePresence>
 
             {bird.imageUrls.length > 1 && (
-              <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute inset-0 flex items-center justify-between px-4 transition-opacity">
                 <button 
                   onClick={prevImg}
-                  className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+                  className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/40 transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button 
                   onClick={nextImg}
-                  className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+                  className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/40 transition-colors"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -224,6 +233,17 @@ export const BirdCard: React.FC<BirdCardProps> = ({ bird, language, className })
             <p className="text-white/80 leading-relaxed font-light text-sm">
               {bird.description}
             </p>
+            <div className="pt-4">
+              <a 
+                href={vogelwarteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white hover:bg-white/20 text-[10px] font-bold tracking-widest uppercase transition-all"
+              >
+                Vogelwarte.ch <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
           <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-center">
              <p className="text-sm font-medium text-white/60">Klicke, um Foto anzuzeigen</p>

@@ -23,6 +23,7 @@ export const BIRDS: Bird[] = [
       'https://www.lbv.de/files/user_upload/Bilder/Arten/Tiere/Vogel%20von%20A-Z/Singvogel/Schwarzkehlchen/Schwarz-Braun-Rot-Blaukehlchen_Zieger_Derer_Schmidt_Masur.jpg',
       'https://upload.wikimedia.org/wikipedia/commons/a/af/%D0%97%D0%B0%D1%80%D1%8F%D0%BD%D0%BA%D0%B0_-_%D0%BC%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%28Erithacus_rubecula%29%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/rotkehlchen/',
   },
   {
     id: 'amsel',
@@ -42,10 +43,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Schwarzes Gefieder und gelber Schnabel. Bekannt für seinen schönen Gesang.',
     imageUrls: [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-9AmUF-Gkbz8LLzMPRiVvwZNQygtUkGT4G2FrUrGpwrP7x3-KlrYZ1XAOCnwL9z6HMDOlWGPTq2wHeE047sYRywlG_yrLhj3aWGTG0M&s=10',
-      'https://upload.wikimedia.org/wikipedia/commons/a/a9/Common_Blackbird.jpg',
-      'https://images.ctfassets.net/2oszne1tuxgg/fdlJVwhA5frEUPp7CBXMu/ee667141f31f6fd988acc5e9464af001/Vorlage_Gr__e_Website_Amsel_weiblich_MDV.jpg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4240_1.jpg',
+      'https://www.birdingtours.de/fileadmin/_processed_/b/6/csm_amsel-maennchen-pexels_33ad837100.jpg',
+      'https://www.gartenzauber.com/cdn/shop/articles/13899972_m.jpg?v=1738036944&width=1200'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/amsel',
   },
   {
     id: 'blaumeise',
@@ -65,10 +67,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Erkennbar an seinem blau-gelben Gefieder und seiner geringen Größe.',
     imageUrls: [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfznf0wzbPqdZyGl8pwolKpex3CvmrEg93KZmWIBM8108wsr0n1U1X_0mbcIaedESJx9bXQRl9L7hr2924Iq0WB5FassF4xmFlo-SCfw&s=10',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3800_1.jpg',
       'https://images.ctfassets.net/2oszne1tuxgg/3B8dIQ54LPFFKJ5RzXYUo5/bca86c7384a7f42ec5b4c600cd3c5db4/Vorlage_Gr__e_Website_Blaumeise_Thomas_Hochebner.jpg?fit=fill&h=2560&fm=webp&q=75&w=3840',
       'https://www.nordischer-shop.at/wp-content/uploads/2024/11/blaumeise.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/blaumeise',
   },
   {
     id: 'kohlmeise',
@@ -88,10 +91,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Größer als die Blaumeise, mit einem markanten schwarzen Streifen auf der gelben Brust.',
     imageUrls: [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInyna0qCthtDyqwYP4eOeNSPY2qYjtbjd1MqyPl83uY5F3vuBd-I_Y1uE0rYleZBnOMXlS4pI3jHgfsxNmrJ1M6-G34rNrDL1v7XVeRU&s=10',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3790_1.jpg',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Parus_major_Luc_Viatour.jpg/1280px-Parus_major_Luc_Viatour.jpg',
       'https://images.ctfassets.net/2oszne1tuxgg/2ASDQFLAJQFr1zcxMfy4dj/587aba5b379628d653c84bb3fa1cb2d9/Vorlage_Gr__e_Website_Kohlmeise_Thomas_Hochebner.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/kohlmeise',
   },
   {
     id: 'haussperling',
@@ -111,8 +115,12 @@ export const BIRDS: Bird[] = [
     },
     description: 'Einer der bekanntesten Vögel, der oft in bewohnten Gebieten zu finden ist.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5250_1.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9b/House_sparrow_male_in_Prospect_Park_%2853532%29.jpg',
+      'https://indianaaudubon.org/wp-content/uploads/2016/04/House_Sparrow_Central_Park_December_13_2014_1610_1.jpg',
+      'https://singaporebirds.com/wp-content/uploads/2016/01/house-sparrow-con-foley-cmf_9363.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/haussperling',
   },
   {
     id: 'feldsperling',
@@ -132,8 +140,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Unterscheidet sich vom Haussperling durch seine kastanienbraune Kappe und den schwarzen Wangenfleck.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/uploads/2024/10/5280_1.jpg',
+      'https://www.lfu.bayern.de/natur/sap/arteninformationen/bild/zeige/230839',
+      'https://www.lbv.de/files/user_upload/Bilder/Arten/Tiere/Vogel%20von%20A-Z/Singvogel/Feldsperling/Feldsperling_Z.-Tunka_LBV_Portr%C3%A4t.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/feldsperling',
   },
   {
     id: 'buchfink',
@@ -153,8 +164,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Sehr verbreiteter Waldvogel mit einem lautstarken, melodischen Gesang.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.krautundrueben.de/sites/krautundrueben.de/files/styles/5_2_heroteaser_xs_2x/public/2025-04/buchfink-maennchen01-48424347.jpg?h=03ce49fc&itok=F4U15saF',
+      'https://upload.wikimedia.org/wikipedia/commons/b/be/Fringilla_coelebs_%28chaffinch%29%2C_male.jpg',
+      'https://www.vogelundnatur.de/wp-content/uploads/2024/12/iStock-479898592-1-960x517.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/buchfink',
   },
   {
     id: 'bergfink',
@@ -174,8 +188,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein Wintergast, bekannt für seine orangefarbenen Schulterflecken.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVnd06j8n1SrkSjTTgmobzqMi-dx5yAvc__KYF0PD29PUa2zjcVn7q-oqSX7t-vI1TBrq7L4owJ9PRBINAl6jn6S6KKOCIGVw1eZb5mWs&s=10',
+      'https://www.vogelwarte.ch/wp-content/uploads/2024/10/5560_1.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/9/94/Bergfink_%28Fringilla_montifringilla%29.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/bergfink',
   },
   {
     id: 'stieglitz',
@@ -195,8 +212,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein hübscher Vogel mit rotem Gesicht und gelben Flügelabzeichen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5350_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5350_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/stieglitz',
   },
   {
     id: 'dompfaff',
@@ -216,8 +235,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Auffälliger Vogel mit einer leuchtend rosa-roten Brust (Männchen) und einer schwarzen Kappe.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5480_1.jpg',
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/gimpel',
   },
   {
     id: 'raubwuerger',
@@ -237,8 +257,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein räuberischer Singvogel, der seine Beute auf Dornen aufspießt.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5120_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5120_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/raubwuerger',
   },
   {
     id: 'neuntoeter',
@@ -258,8 +280,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Benannt nach seiner Gewohnheit, Beute als Vorrat auf Dornen aufzuspießen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5160_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/neuntoeter',
   },
   {
     id: 'kernbeisser',
@@ -279,8 +302,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Größter Fink Europas mit einem massiven Schnabel, der Kirschkerne knacken kann.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5320_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/kernbeisser',
   },
   {
     id: 'goldhaehnchen',
@@ -300,8 +324,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Der kleinste Vogel Europas, erkennbar an seinem leuchtend gelben oder orangen Scheitelstreifen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4790_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4830_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4820_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/goldhaehnchen',
   },
   {
     id: 'star',
@@ -321,8 +348,12 @@ export const BIRDS: Bird[] = [
     },
     description: 'Bekannt für sein schillerndes Gefieder und seine erstaunliche Fähigkeit, Laute nachzuahmen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5180_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5180_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5180_5.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5180_6.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/star',
   },
   {
     id: 'hausrotschwanz',
@@ -342,8 +373,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Gut an städtische Umgebungen angepasst, erkennbar an seinem zitternden orangeroten Schwanz.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4060_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/hausrotschwanz',
   },
   {
     id: 'gartenrotschwanz',
@@ -363,8 +395,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Oft in Parks und alten Obstgärten zu finden; das Männchen hat eine auffällige orangefarbene Brust und eine weiße Stirn.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4070_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/gartenrotschwanz',
   },
   {
     id: 'zilpzalp',
@@ -384,8 +417,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein kleiner Laubsänger, benannt nach seinem charakteristischen „Zilp-Zalp“-Gesang.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/4730_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/zilpzalp',
   },
   {
     id: 'goldammer',
@@ -405,8 +439,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Eine farbenfrohe Ammer der offenen Landschaft; die Männchen sind zur Brutzeit leuchtend gelb.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5580_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/goldammer',
   },
   {
     id: 'buntspecht',
@@ -426,8 +461,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Markante schwarz-weiße Federn mit rotem Unterschwanz; Männchen haben einen roten Nackenfleck.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3410_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/buntspecht',
   },
   {
     id: 'gruenspecht',
@@ -447,8 +483,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Bekannt für seinen lachenden Ruf und seine Vorliebe, Ameisen am Boden zu fressen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3380_1.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/gruenspecht',
   },
   {
     id: 'bachstelze',
@@ -468,8 +505,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein schlanker, schwarz-weißer Vogel, bekannt für sein ständiges Schwanzwippen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5030_1.jpg',
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/bachstelze',
   },
   {
     id: 'tuerkentaube',
@@ -489,8 +527,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Erkennbar an dem schwarzen Halbring am Nacken und seinem rhythmischen „Gurr“-Ruf.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3020_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3020_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/tuerkentaube',
   },
   {
     id: 'kleiber',
@@ -510,8 +550,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Der einzige europäische Vogel, der Baumstämme kopfüber hinunterklettern kann.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3910_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3910_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/kleiber',
   },
   {
     id: 'elster',
@@ -531,8 +573,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Auffälliger schwarz-weißer Vogel mit langem Schwanz und schillernden Federn.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3720_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3720_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/elster',
   },
   {
     id: 'eichelhaeher',
@@ -552,8 +596,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Farbenfroher Waldvogel, bekannt für das Vergraben von Eicheln.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3750_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3750_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/eichelhaeher',
   },
   {
     id: 'maeusebussard',
@@ -573,11 +619,14 @@ export const BIRDS: Bird[] = [
     },
     description: 'Der häufigste Greifvogel Mitteleuropas, oft kreisend oder auf Zaunpfählen sitzend zu sehen.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1150_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1150_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1150_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/maeusebussard',
   },
   {
-    id: 'roter-milan',
+    id: 'rot-milan',
     germanName: 'Roter Milan',
     names: {
       en: 'Red Kite',
@@ -594,8 +643,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Beeindruckender Greifvogel mit tief gegabeltem Schwanz und rostrot schimmerndem Gefieder.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1090_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1090_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1090_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/rot-milan',
   },
   {
     id: 'schleiereule',
@@ -615,8 +667,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Geisterhaft helle Eule mit einem markanten herzförmigen Gesicht.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3070_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3070_2.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/schleiereule',
   },
   {
     id: 'graureiher',
@@ -636,8 +690,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein großer, langbeiniger Watvogel, der oft bewegungslos am Wasser steht.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/390_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/390_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/graureiher',
   },
   {
     id: 'weissstorch',
@@ -657,8 +713,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Symbolträchtiger Vogel mit weißem Gefieder und schwarzen Schwungfedern, der oft auf Schornsteinen nistet.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/500_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/500_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/weissstorch',
   },
   {
     id: 'hoeckerschwan',
@@ -678,8 +736,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein großer, eleganter Wasservogel mit orangem Schnabel und schwarzem Höcker.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/570_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/570_3.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/570_4.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/hoeckerschwan',
   },
   {
     id: 'stockente',
@@ -699,8 +760,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Die häufigste Entenart; das Männchen hat einen markanten glänzend grünen Kopf.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/720_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/720_4.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/stockente',
   },
   {
     id: 'eisvogel',
@@ -720,8 +783,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein kleiner, prachtvoll gefärbter Vogel, der von einer Sitzwarte aus nach Fischen taucht.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3320_1.jpg',
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/eisvogel',
   },
   {
     id: 'rauchschwalbe',
@@ -741,8 +805,11 @@ export const BIRDS: Bird[] = [
     },
     description: 'Erkennbar an seinem tief gegabelten Schwanz und seinem flinken, wendigen Flug.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3610_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3610_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3610_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/rauchschwalbe',
   },
   {
     id: 'mehlschwalbe',
@@ -762,7 +829,10 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein Sommergast mit weißem Bürzel, der oft unter Dachvorsprüngen nistet.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3640_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3640_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3640_3.jpg'
     ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/mehlschwalbe',
   },
 ];

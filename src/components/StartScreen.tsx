@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Bird, GraduationCap, PlayCircle, BookOpen } from 'lucide-react';
+import { Bird, GraduationCap, PlayCircle, BookOpen, BarChart3 } from 'lucide-react';
 import { AppState, Language } from '../types';
 
 interface StartScreenProps {
@@ -43,16 +43,29 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart, language }) =
         </p>
       </motion.div>
 
-      {/* Language Display */}
-      <div className="mb-12">
+      {/* Language & Stats Display */}
+      <div className="flex flex-col md:flex-row items-center gap-4 mb-12">
         <button
           onClick={() => onStart('LanguageSelection')}
-          className="group px-6 py-3 rounded-full bg-white border border-brand-olive/10 shadow-sm hover:shadow-md transition-all flex items-center gap-3 mx-auto"
+          className="group px-6 py-3 rounded-full bg-white border border-brand-olive/10 shadow-sm hover:shadow-md transition-all flex items-center gap-3"
         >
           <span className="text-xl">{currentLang.flag}</span>
           <div className="text-left">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-olive/40 leading-none mb-1">Zweite Sprache</p>
             <p className="font-semibold text-sm text-brand-olive group-hover:text-brand-ink">{currentLang.label}</p>
+          </div>
+        </button>
+
+        <button
+          onClick={() => onStart('Stats')}
+          className="group px-6 py-3 rounded-full bg-white border border-brand-olive/10 shadow-sm hover:shadow-md transition-all flex items-center gap-3"
+        >
+          <div className="w-8 h-8 rounded-full bg-brand-olive/5 flex items-center justify-center text-brand-olive group-hover:bg-brand-olive group-hover:text-white transition-colors">
+            <BarChart3 className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-olive/40 leading-none mb-1">Statistik</p>
+            <p className="font-semibold text-sm text-brand-olive group-hover:text-brand-ink">Mein Lernstatus</p>
           </div>
         </button>
       </div>

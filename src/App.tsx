@@ -7,9 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { StartScreen } from './components/StartScreen';
 import { StudyView } from './components/StudyView';
 import { QuizView } from './components/QuizView';
+import { StatsView } from './components/StatsView';
 import { AppState, Language } from './types';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bird, X } from 'lucide-react';
+import { Bird, X, BarChart3 } from 'lucide-react';
 
 export default function App() {
   const [view, setView] = useState<AppState>('Selection');
@@ -35,6 +36,12 @@ export default function App() {
               className={`text-sm font-semibold uppercase tracking-widest transition-colors ${view === 'Quiz' ? 'text-brand-olive' : 'text-brand-olive/40 hover:text-brand-olive/60'}`}
              >
                Quiz
+             </button>
+             <button 
+              onClick={() => setView('Stats')}
+              className={`text-sm font-semibold uppercase tracking-widest transition-colors ${view === 'Stats' ? 'text-brand-olive' : 'text-brand-olive/40 hover:text-brand-olive/60'}`}
+             >
+               Lernstatus
              </button>
           </div>
         </div>
@@ -114,6 +121,12 @@ export default function App() {
             )}
             {view === 'Quiz' && (
               <QuizView 
+                language={language}
+                onBack={() => setView('Selection')} 
+              />
+            )}
+            {view === 'Stats' && (
+              <StatsView 
                 language={language}
                 onBack={() => setView('Selection')} 
               />
