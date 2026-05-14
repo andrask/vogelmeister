@@ -19,7 +19,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Ein kleiner insektenfressender Sperlingsvogel mit einer orangeroten Brust.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrtTtn0ye0ssHJVhfRAdVe5w1lVE0z8YUwB0Eai3d74grGdw7Dq26ONPchX46QGz6V7P83_JLARpetJOoASluS9zEG0_vE9E6DBXuV7o&s=10',
+      'https://www.lbv.de/files/user_upload/Bilder/Arten/Tiere/Vogel%20von%20A-Z/Singvogel/Schwarzkehlchen/Schwarz-Braun-Rot-Blaukehlchen_Zieger_Derer_Schmidt_Masur.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/a/af/%D0%97%D0%B0%D1%80%D1%8F%D0%BD%D0%BA%D0%B0_-_%D0%BC%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%28Erithacus_rubecula%29%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg'
     ],
   },
   {
