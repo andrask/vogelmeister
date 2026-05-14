@@ -10,7 +10,7 @@ import { QuizView } from './components/QuizView';
 import { StatsView } from './components/StatsView';
 import { AppState, Language } from './types';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bird, X, BarChart3 } from 'lucide-react';
+import { Bird, X, BarChart3, Github } from 'lucide-react';
 
 export default function App() {
   const [view, setView] = useState<AppState>('Selection');
@@ -43,6 +43,17 @@ export default function App() {
              >
                Lernstatus
              </button>
+          </div>
+          <div className="flex items-center gap-4 pointer-events-auto">
+            <a 
+              href="https://github.com/andrask/vogelmeister" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-brand-olive/40 hover:text-brand-olive hover:bg-brand-olive/5 transition-all"
+              aria-label="GitHub Repository"
+            >
+              <Github className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </nav>
