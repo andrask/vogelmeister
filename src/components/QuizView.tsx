@@ -10,6 +10,8 @@ interface QuizViewProps {
   language: Language;
 }
 
+import { updateBirdStat } from '../lib/stats';
+
 export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   const QUESTIONS_PER_SESSION = 10;
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -47,7 +49,11 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   const handleSelect = (option: string) => {
     if (selectedOption) return;
     setSelectedOption(option);
-    if (option === questions[currentIndex].correctAnswer) {
+    
+    const isCorrect = option === questions[currentIndex].correctAnswer;
+    updateBirdStat(questions[currentIndex].bird.id, isCorrect);
+    
+    if (isCorrect) {
       setScore((s) => s + 1);
     }
   };

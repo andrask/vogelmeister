@@ -42,7 +42,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Schwarzes Gefieder und gelber Schnabel. Bekannt für seinen schönen Gesang.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-9AmUF-Gkbz8LLzMPRiVvwZNQygtUkGT4G2FrUrGpwrP7x3-KlrYZ1XAOCnwL9z6HMDOlWGPTq2wHeE047sYRywlG_yrLhj3aWGTG0M&s=10',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a9/Common_Blackbird.jpg',
+      'https://images.ctfassets.net/2oszne1tuxgg/fdlJVwhA5frEUPp7CBXMu/ee667141f31f6fd988acc5e9464af001/Vorlage_Gr__e_Website_Amsel_weiblich_MDV.jpg'
     ],
   },
   {
@@ -63,7 +65,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Erkennbar an seinem blau-gelben Gefieder und seiner geringen Größe.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfznf0wzbPqdZyGl8pwolKpex3CvmrEg93KZmWIBM8108wsr0n1U1X_0mbcIaedESJx9bXQRl9L7hr2924Iq0WB5FassF4xmFlo-SCfw&s=10',
+      'https://images.ctfassets.net/2oszne1tuxgg/3B8dIQ54LPFFKJ5RzXYUo5/bca86c7384a7f42ec5b4c600cd3c5db4/Vorlage_Gr__e_Website_Blaumeise_Thomas_Hochebner.jpg?fit=fill&h=2560&fm=webp&q=75&w=3840',
+      'https://www.nordischer-shop.at/wp-content/uploads/2024/11/blaumeise.jpg'
     ],
   },
   {
@@ -84,7 +88,9 @@ export const BIRDS: Bird[] = [
     },
     description: 'Größer als die Blaumeise, mit einem markanten schwarzen Streifen auf der gelben Brust.',
     imageUrls: [
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/Missing_icon_the_noun_project.svg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInyna0qCthtDyqwYP4eOeNSPY2qYjtbjd1MqyPl83uY5F3vuBd-I_Y1uE0rYleZBnOMXlS4pI3jHgfsxNmrJ1M6-G34rNrDL1v7XVeRU&s=10',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Parus_major_Luc_Viatour.jpg/1280px-Parus_major_Luc_Viatour.jpg',
+      'https://images.ctfassets.net/2oszne1tuxgg/2ASDQFLAJQFr1zcxMfy4dj/587aba5b379628d653c84bb3fa1cb2d9/Vorlage_Gr__e_Website_Kohlmeise_Thomas_Hochebner.jpg'
     ],
   },
   {
