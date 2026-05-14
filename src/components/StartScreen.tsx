@@ -1,13 +1,29 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Bird, GraduationCap, PlayCircle, BookOpen } from 'lucide-react';
-import { AppState } from '../types';
+import { AppState, Language } from '../types';
 
 interface StartScreenProps {
   onStart: (mode: AppState) => void;
+  language: Language;
 }
 
-export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
+const LANGUAGES: Record<string, { label: string; flag: string }> = {
+  en: { label: 'English', flag: '🇬🇧' },
+  fr: { label: 'Français', flag: '🇫🇷' },
+  it: { label: 'Italiano', flag: '🇮🇹' },
+  es: { label: 'Español', flag: '🇪🇸' },
+  pt: { label: 'Português', flag: '🇵🇹' },
+  nl: { label: 'Nederlands', flag: '🇳🇱' },
+  sv: { label: 'Svenska', flag: '🇸🇪' },
+  da: { label: 'Dansk', flag: '🇩🇰' },
+  pl: { label: 'Polski', flag: '🇵🇱' },
+  cs: { label: 'Čeština', flag: '🇨🇿' },
+  hu: { label: 'Magyar', flag: '🇭🇺' },
+};
+
+export const StartScreen: React.FC<StartScreenProps> = ({ onStart, language }) => {
+  const currentLang = LANGUAGES[language as string] || LANGUAGES.en;
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] md:min-h-[80vh] px-6 text-center">
       <motion.div
@@ -23,9 +39,23 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
           VogelMeister
         </h1>
         <p className="text-base md:text-lg text-brand-olive/70 max-w-md mx-auto leading-relaxed">
-          The elegant way to master central European bird names in German.
+          Der elegante Weg, mitteleuropäische Vogelnamen auf Deutsch zu meistern.
         </p>
       </motion.div>
+
+      {/* Language Display */}
+      <div className="mb-12">
+        <button
+          onClick={() => onStart('LanguageSelection')}
+          className="group px-6 py-3 rounded-full bg-white border border-brand-olive/10 shadow-sm hover:shadow-md transition-all flex items-center gap-3 mx-auto"
+        >
+          <span className="text-xl">{currentLang.flag}</span>
+          <div className="text-left">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-olive/40 leading-none mb-1">Zweite Sprache</p>
+            <p className="font-semibold text-sm text-brand-olive group-hover:text-brand-ink">{currentLang.label}</p>
+          </div>
+        </button>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-3xl">
         <motion.button
@@ -37,9 +67,9 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
           <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand-olive/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-brand-olive group-hover:text-white transition-colors">
             <BookOpen className="w-5 h-5 md:w-6 h-6" />
           </div>
-          <h2 className="text-xl md:text-2xl font-serif italic mb-1 md:mb-2">Study Cards</h2>
+          <h2 className="text-xl md:text-2xl font-serif italic mb-1 md:mb-2">Lernkarten</h2>
           <p className="text-brand-ink/60 text-xs md:text-sm">
-            Familiarize yourself with names and photos. No pressure, just learning.
+            Mache dich mit Namen und Fotos vertraut. Ganz ohne Druck, einfach lernen.
           </p>
         </motion.button>
 
@@ -49,12 +79,12 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
           onClick={() => onStart('Quiz')}
           className="group flex flex-col items-start p-6 md:p-8 rounded-3xl bg-brand-olive shadow-xl shadow-brand-olive/20 text-left transition-all hover:bg-brand-olive/90"
         >
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-white group-hover:text-brand-olive transition-colors">
-            <GraduationCap className="w-5 h-5 md:w-6 h-6 text-white" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-4 md:mb-6 text-white group-hover:bg-white group-hover:text-brand-olive transition-colors">
+            <GraduationCap className="w-5 h-5 md:w-6 h-6" />
           </div>
-          <h2 className="text-xl md:text-2xl font-serif italic mb-1 md:mb-2 text-white">Recall Quiz</h2>
+          <h2 className="text-xl md:text-2xl font-serif italic mb-1 md:mb-2 text-white">Erinnerungs-Quiz</h2>
           <p className="text-white/70 text-xs md:text-sm">
-            Test your knowledge. See a bird, choose the correct German name.
+            Teste dein Wissen. Sieh einen Vogel, wähle den richtigen deutschen Namen.
           </p>
         </motion.button>
       </div>
@@ -66,7 +96,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
         className="mt-8 md:mt-16 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-brand-olive/40"
       >
         <div className="h-px w-8 bg-brand-olive/20" />
-        Explore the Aviary
+        Erkunde die Voliere
         <div className="h-px w-8 bg-brand-olive/20" />
       </motion.div>
     </div>

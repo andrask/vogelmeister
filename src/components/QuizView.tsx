@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bird, QuizQuestion } from '../types';
+import { Bird, QuizQuestion, Language } from '../types';
 import { BIRDS } from '../constants';
-import { CheckCircle2, XCircle, RotateCcw, ArrowRight, X } from 'lucide-react';
+import { CheckCircle2, XCircle, RotateCcw, ArrowRight, X, Info } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface QuizViewProps {
   onBack: () => void;
+  language: Language;
 }
 
-export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
+export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -19,6 +20,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
   // Initialize quiz
   useEffect(() => {
     const generateQuiz = () => {
+      window.scrollTo(0, 0);
       const shuffled = [...BIRDS].sort(() => Math.random() - 0.5);
       const quizQuestions = shuffled.map((bird) => {
         const others = BIRDS.filter((b) => b.id !== bird.id)
@@ -27,9 +29,10 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
           .map((b) => b.germanName);
         
         const options = [...others, bird.germanName].sort(() => Math.random() - 0.5);
+        const randomImage = bird.imageUrls[Math.floor(Math.random() * bird.imageUrls.length)];
         
         return {
-          bird,
+          bird: { ...bird, imageUrl: randomImage }, // Override imageUrl for the question
           options,
           correctAnswer: bird.germanName,
         };
@@ -58,6 +61,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
   };
 
   const restart = () => {
+    window.scrollTo(0, 0);
     const shuffled = [...BIRDS].sort(() => Math.random() - 0.5);
     const quizQuestions = shuffled.map((bird) => {
       const others = BIRDS.filter((b) => b.id !== bird.id)
@@ -66,9 +70,10 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
         .map((b) => b.germanName);
       
       const options = [...others, bird.germanName].sort(() => Math.random() - 0.5);
+      const randomImage = bird.imageUrls[Math.floor(Math.random() * bird.imageUrls.length)];
       
       return {
-        bird,
+        bird: { ...bird, imageUrl: randomImage },
         options,
         correctAnswer: bird.germanName,
       };
@@ -94,9 +99,9 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
           <div className="w-20 h-20 rounded-full bg-brand-olive/10 flex items-center justify-center mx-auto mb-6 text-brand-olive font-serif italic text-3xl">
             {Math.round((score / questions.length) * 100)}%
           </div>
-          <h2 className="text-4xl font-serif italic mb-2">Quiz Complete</h2>
+          <h2 className="text-4xl font-serif italic mb-2">Quiz beendet</h2>
           <p className="text-brand-olive/60 mb-8">
-            You identified {score} out of {questions.length} birds correctly.
+            Du hast {score} von {questions.length} Vögeln richtig erkannt.
           </p>
           
           <div className="flex flex-col gap-4">
@@ -104,13 +109,13 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
               onClick={restart}
               className="w-full py-4 rounded-2xl bg-brand-olive text-white font-medium flex items-center justify-center gap-2 hover:bg-brand-olive/90 transition-colors"
             >
-              <RotateCcw className="w-5 h-5" /> Retry Quiz
+              <RotateCcw className="w-5 h-5" /> Quiz wiederholen
             </button>
             <button
               onClick={onBack}
               className="w-full py-4 rounded-2xl bg-white border border-brand-olive/20 text-brand-olive font-medium hover:bg-brand-cream transition-colors"
             >
-              Back to Home
+              Zurück zum Start
             </button>
           </div>
         </motion.div>
@@ -121,29 +126,20 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
   const current = questions[currentIndex];
 
   return (
-    <div className="max-w-xl mx-auto w-full px-6 py-2 md:py-12">
-      <div className="flex justify-between items-center mb-2 md:mb-8">
-        <div>
-          <h2 className="text-2xl font-serif italic text-brand-ink">Recall Quiz</h2>
-          <p className="text-brand-olive/60 text-sm">Question {currentIndex + 1} of {questions.length}</p>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="px-3 py-1 rounded-full bg-brand-olive/10 text-brand-olive text-xs font-bold">
-            Score: {score}
-          </div>
-          <button 
-            onClick={onBack}
-            className="w-10 h-10 rounded-full bg-white border border-brand-olive/10 flex items-center justify-center text-brand-olive hover:bg-brand-cream transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
+    <div className="max-w-xl mx-auto w-full px-6 pt-0 pb-12 md:pb-16">
+      <div className="flex justify-end items-center mb-4 md:mb-6">
+        <button 
+          onClick={onBack}
+          className="w-10 h-10 rounded-full bg-white border border-brand-olive/10 flex items-center justify-center text-brand-olive hover:bg-brand-cream transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
       </div>
 
       <div className="mb-8 overflow-hidden rounded-3xl aspect-[16/9] shadow-inner bg-brand-olive/5 relative">
         <img 
           src={current.bird.imageUrl} 
-          alt="Bird to identify" 
+          alt="Vogel bestimmen" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -156,7 +152,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-2">
         {current.options.map((option) => {
           const isCorrect = option === current.correctAnswer;
           const isSelected = selectedOption === option;
@@ -168,7 +164,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
               onClick={() => handleSelect(option)}
               disabled={showAnswer}
               className={cn(
-                "w-full p-5 rounded-2xl text-left border-2 transition-all duration-300 flex justify-between items-center group",
+                "w-full py-3 px-5 rounded-2xl text-left border-2 transition-all duration-300 flex justify-between items-center group",
                 !showAnswer && "bg-white border-brand-olive/5 hover:border-brand-olive hover:bg-brand-cream",
                 showAnswer && isCorrect && "bg-green-50 border-green-500 text-green-700",
                 showAnswer && isSelected && !isCorrect && "bg-red-50 border-red-500 text-red-700",
@@ -193,7 +189,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
               onClick={handleNext}
               className="px-8 py-3 rounded-full bg-brand-olive text-white font-medium flex items-center gap-2 hover:bg-brand-olive/90 transition-colors shadow-lg"
             >
-              {currentIndex < questions.length - 1 ? 'Next Question' : 'See Results'}
+              {currentIndex < questions.length - 1 ? 'Nächste Frage' : 'Ergebnisse ansehen'}
               <ArrowRight className="w-4 h-4" />
             </motion.button>
           )}
