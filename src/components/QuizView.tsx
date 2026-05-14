@@ -131,7 +131,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
               onClick={restart}
               className="w-full py-4 rounded-2xl bg-brand-olive text-white font-medium flex items-center justify-center gap-2 hover:bg-brand-olive/90 transition-colors"
             >
-              <RotateCcw className="w-5 h-5" /> Quiz wiederholen
+              <RotateCcw className="w-5 h-5" /> New Quiz starten
             </button>
             <button
               onClick={onBack}
