@@ -121,7 +121,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack }) => {
   const current = questions[currentIndex];
 
   return (
-    <div className="max-w-xl mx-auto w-full px-6 py-12">
+    <div className="max-w-xl mx-auto w-full px-6 py-6 md:py-12">
       <div className="flex justify-between items-center mb-8">
         <div>
           <h2 className="text-2xl font-serif italic text-brand-ink">Recall Quiz</h2>

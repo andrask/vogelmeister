@@ -20,7 +20,7 @@ export const StudyView: React.FC<StudyViewProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto w-full px-6 py-12">
+    <div className="max-w-4xl mx-auto w-full px-6 py-6 md:py-12">
       <div className="flex justify-between items-center mb-12">
         <div>
           <h2 className="text-4xl font-serif italic text-brand-ink">Study Deck</h2>
