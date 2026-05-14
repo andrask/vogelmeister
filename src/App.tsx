@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-brand-cream selection:bg-brand-olive/20 selection:text-brand-olive">
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:py-6 pointer-events-none">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-1 md:py-6 pointer-events-none">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -47,7 +47,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="pt-16 md:pt-24 pb-12 relative overflow-hidden">
+      <main className="pt-8 md:pt-24 pb-12 relative overflow-hidden">
         {/* Simplified background decoration */}
         <div className="absolute top-[-10%] right-[-5%] w-[40%] aspect-square rounded-full bg-brand-olive/[0.03] -z-10" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[30%] aspect-square rounded-full bg-brand-olive/[0.02] -z-10" />

@@ -14,7 +14,7 @@ export const BirdCard: React.FC<BirdCardProps> = ({ bird, className }) => {
 
   return (
     <div 
-      className={cn("relative w-full aspect-[3/4] cursor-pointer group perspective-1000", className)}
+      className={cn("relative w-full aspect-[4/5] md:aspect-[3/4] cursor-pointer group perspective-1000", className)}
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <motion.div
