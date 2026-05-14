@@ -11,6 +11,7 @@ interface QuizViewProps {
 }
 
 export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
+  const QUESTIONS_PER_SESSION = 10;
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -21,7 +22,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
   useEffect(() => {
     const generateQuiz = () => {
       window.scrollTo(0, 0);
-      const shuffled = [...BIRDS].sort(() => Math.random() - 0.5);
+      const shuffled = [...BIRDS].sort(() => Math.random() - 0.5).slice(0, QUESTIONS_PER_SESSION);
       const quizQuestions = shuffled.map((bird) => {
         const others = BIRDS.filter((b) => b.id !== bird.id)
           .sort(() => Math.random() - 0.5)
@@ -62,7 +63,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
 
   const restart = () => {
     window.scrollTo(0, 0);
-    const shuffled = [...BIRDS].sort(() => Math.random() - 0.5);
+    const shuffled = [...BIRDS].sort(() => Math.random() - 0.5).slice(0, QUESTIONS_PER_SESSION);
     const quizQuestions = shuffled.map((bird) => {
       const others = BIRDS.filter((b) => b.id !== bird.id)
         .sort(() => Math.random() - 0.5)
@@ -127,7 +128,10 @@ export const QuizView: React.FC<QuizViewProps> = ({ onBack, language }) => {
 
   return (
     <div className="max-w-xl mx-auto w-full px-6 pt-0 pb-12 md:pb-16">
-      <div className="flex justify-end items-center mb-4 md:mb-6">
+      <div className="flex justify-between items-center mb-4 md:mb-6">
+        <div className="text-brand-olive/60 text-sm font-medium">
+          Frage {currentIndex + 1} von {questions.length}
+        </div>
         <button 
           onClick={onBack}
           className="w-10 h-10 rounded-full bg-white border border-brand-olive/10 flex items-center justify-center text-brand-olive hover:bg-brand-cream transition-colors"
