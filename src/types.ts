@@ -12,6 +12,7 @@ export interface Bird {
   description: string;
   imageUrls: string[];
   vogelwarteUrl?: string;
+  imageUrl?: string;
 }
 
 export type AppState = 'Selection' | 'Study' | 'Quiz' | 'LanguageSelection' | 'Stats';

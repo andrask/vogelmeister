@@ -835,4 +835,313 @@ export const BIRDS: Bird[] = [
     ],
     vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/mehlschwalbe',
   },
+  {
+    id: 'distelfink',
+    germanName: 'Distelfink (Stieglitz)',
+    names: {
+      en: 'European Goldfinch',
+      fr: 'Chardonneret élégant',
+      it: 'Cardellino',
+      es: 'Jilguero',
+      pt: 'Pintassilgo-comum',
+      nl: 'Putter',
+      sv: 'Steglits',
+      da: 'Stillits',
+      pl: 'Szczygieł',
+      cs: 'Stehlík obecný',
+      hu: 'Tengelic'
+    },
+    description: 'Ein bunter, geselliger Fink mit einer roten Maske und leuchtend gelben Flügelbändern.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5350_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/5350_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/stieglitz',
+  },
+  {
+    id: 'sumpfmeise',
+    germanName: 'Sumpfmeise',
+    names: {
+      en: 'Marsh Tit',
+      fr: 'Mésange nonnette',
+      it: 'Cincia bigia',
+      es: 'Carbonero palustre',
+      pt: 'Chapim-palustre',
+      nl: 'Glanskop',
+      sv: 'Kärrmes',
+      da: 'Sumpmejse',
+      pl: 'Sikora uboga',
+      cs: 'Sýkora babka',
+      hu: 'Barátcinege'
+    },
+    description: 'Kompakte Meise mit glänzend schwarzer Kappe, kleinem schwarzen Kehlfleck und graubraunem Gefieder.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3840_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3840_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/sumpfmeise',
+  },
+  {
+    id: 'grauspecht',
+    germanName: 'Grauspecht',
+    names: {
+      en: 'Grey-headed Woodpecker',
+      fr: 'Pic cendré',
+      it: 'Picchio cenerino',
+      es: 'Pito cano',
+      pt: 'Pica-pau-cinzento',
+      nl: 'Grijskopspecht',
+      sv: 'Gråspett',
+      da: 'Gråspætte',
+      pl: 'Dzięcioł zielonosiwy',
+      cs: 'Žluna šedá',
+      hu: 'Hamvas küllő'
+    },
+    description: 'Ähnelt dem Grünspecht, ist aber grauer im Gesicht und hat einen kleineren roten Fleck am Vorderscheitel.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3390_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3390_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/grauspecht',
+  },
+  {
+    id: 'haustaube',
+    germanName: 'Haustaube',
+    names: {
+      en: 'Feral Pigeon',
+      fr: 'Pigeon biset',
+      it: 'Piccione torraiolo',
+      es: 'Paloma bravía',
+      pt: 'Pombo-comum',
+      nl: 'Stadsduif',
+      sv: 'Stadsduva',
+      da: 'Klippedue',
+      pl: 'Gołąb miejski',
+      cs: 'Holub domácí',
+      hu: 'Házigalamb'
+    },
+    description: 'Die allgegenwärtige Stadt- und Haustaube, abstammend von der Felsentaube mit oft sehr variablen Gefiederfarben.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2971_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2971_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2971_3.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/strassentaube',
+  },
+  {
+    id: 'tannenhaeher',
+    germanName: 'Tannenhäher',
+    names: {
+      en: 'Spotted Nutcracker',
+      fr: 'Cassenoix moucheté',
+      it: 'Nocciolaia',
+      es: 'Cascanueces común',
+      pt: 'Quebra-nozes',
+      nl: 'Notenkraker',
+      sv: 'Nötkråka',
+      da: 'Nøddekrige',
+      pl: 'Orzechówka',
+      cs: 'Ořešník kropenatý',
+      hu: 'Fenyőszajkó'
+    },
+    description: 'Dunkelbrauner, weiß getupfter Rabenvogel mit kräftigem Schnabel, der sich besonders von Haselnüssen und Arvensamen ernährt.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3740_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3740_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/tannenhaeher',
+  },
+  {
+    id: 'rabenkraehe',
+    germanName: 'Rabenkrähe',
+    names: {
+      en: 'Carrion Crow',
+      fr: 'Corneille noire',
+      it: 'Cornacchia nera',
+      es: 'Corneja negra',
+      pt: 'Gralha-preta',
+      nl: 'Zwarte kraai',
+      sv: 'Svartkråka',
+      da: 'Sortkrage',
+      pl: 'Czarnowron',
+      cs: 'Vrána černá',
+      hu: 'Kormos varjú'
+    },
+    description: 'Vollständig glänzend schwarzer Rabenvogel, sehr intelligent, ruffreudig und anpassungsfähig.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3681_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3681_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/rabenkraehe',
+  },
+  {
+    id: 'saatkraehe',
+    germanName: 'Saatkrähe (Staatkrähe)',
+    names: {
+      en: 'Rook',
+      fr: 'Corbeau freux',
+      it: 'Corvo frugilego',
+      es: 'Graja',
+      pt: 'Gralha-calva',
+      nl: 'Roek',
+      sv: 'Råka',
+      da: 'Råge',
+      pl: 'Gawron',
+      cs: 'Havran polní',
+      hu: 'Vetési varjú'
+    },
+    description: 'Ein geselliger Rabenvogel mit charakteristischem, nacktem grauem Schnabelgrund im Erwachsenenalter.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3700_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3700_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3700_3.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/saatkraehe',
+  },
+  {
+    id: 'baumfalke',
+    germanName: 'Baumfalke',
+    names: {
+      en: 'Eurasian Hobby',
+      fr: 'Faucon hobereau',
+      it: 'Lodolaio',
+      es: 'Alcotán europeo',
+      pt: 'Alcotão',
+      nl: 'Boomvalk',
+      sv: 'Lärkfalk',
+      da: 'Lærkefalk',
+      pl: 'Kobuz',
+      cs: 'Ostříž lesní',
+      hu: 'Kabasólyom'
+    },
+    description: 'Eleganter kleiner Falke mit schmalen, spitzen Flügeln und rotbraunen Federn an den Beinen.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1430_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1430_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1430_3.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/baumfalke',
+  },
+  {
+    id: 'haubentaucher',
+    germanName: 'Haubentaucher',
+    names: {
+      en: 'Great Crested Grebe',
+      fr: 'Grèbe huppé',
+      it: 'Svasso maggiore',
+      es: 'Somormujo lavanco',
+      pt: 'Mergulhão-de-crista',
+      nl: 'Fuut',
+      sv: 'Skäggdopping',
+      da: 'Toppet lappedykker',
+      pl: 'Perkoz dwuczuby',
+      cs: 'Potápka roháč',
+      hu: 'Búbos vöcsök'
+    },
+    description: 'Eleganter Wasservogel mit markanter rotbrauner und schwarzer Kopfhaube und prachtvollen Balzritualen.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/80_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/80_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/80_3.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/80_4.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/haubentaucher',
+  },
+  {
+    id: 'blaesshuhn',
+    germanName: 'Blässhuhn',
+    names: {
+      en: 'Eurasian Coot',
+      fr: 'Foulque macroule',
+      it: 'Folaga',
+      es: 'Focha común',
+      pt: 'Galeirão-comum',
+      nl: 'Meerkoet',
+      sv: 'Sothöna',
+      da: 'Blishøne',
+      pl: 'Łyska',
+      cs: 'Lyska černá',
+      hu: 'Szárcsa'
+    },
+    description: 'Rußschwarzer Wasservogel mit markantem weißen Schnabel und weißer Stirnplatte.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1770_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1770_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/1770_3.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/blaesshuhn',
+  },
+  {
+    id: 'lachmoewe',
+    germanName: 'Lachmöwe',
+    names: {
+      en: 'Black-headed Gull',
+      fr: 'Mouette rieuse',
+      it: 'Gabbiano comune',
+      es: 'Gaviota reidora',
+      pt: 'Guincho-comum',
+      nl: 'Kokmeeuw',
+      sv: 'Skrattmås',
+      da: 'Hættemåge',
+      pl: 'Śmieszka',
+      cs: 'Racek chechtavý',
+      hu: 'Dankasirály'
+    },
+    description: 'Weit verbreitete kleine Möwe, die im Prachtkleid einen schokoladenbraunen Kopf und rote Beine besitzt.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2630_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2630_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2630_3.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2630_4.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/2630_5.jpg',
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/lachmoewe',
+  },
+  {
+    id: 'kuckuck',
+    germanName: 'Kuckuck',
+    names: {
+      en: 'Common Cuckoo',
+      fr: 'Coucou gris',
+      it: 'Cuculo',
+      es: 'Cuco común',
+      pt: 'Cuco-canoro',
+      nl: 'Koekoek',
+      sv: 'Gök',
+      da: 'Gøg',
+      pl: 'Kukułka',
+      cs: 'Kukačka obecná',
+      hu: 'Kakukk'
+    },
+    description: 'Bekannt für seinen charakteristischen Ruf und seinen Brutparasitismus, bei dem es Eier in fremde Nester legt.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3040_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3040_2.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3040_3.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/kuckuck',
+  },
+  {
+    id: 'mauersegler',
+    germanName: 'Mauersegler (Mauersegel)',
+    names: {
+      en: 'Common Swift',
+      fr: 'Martinet noir',
+      it: 'Rondone',
+      es: 'Vencejo común',
+      pt: 'Andorinhão-preto',
+      nl: 'Gierzwaluw',
+      sv: 'Tornsvala',
+      da: 'Mursejler',
+      pl: 'Jerzyk',
+      cs: 'Rorýs obecný',
+      hu: 'Sarlósfecske'
+    },
+    description: 'Meister des Dauerflugs, der fast sein ganzes Leben in der Luft verbringt und an schrillen Rufen erkennbar ist.',
+    imageUrls: [
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3270_1.jpg',
+      'https://www.vogelwarte.ch/wp-content/assets/images/bird/species/3270_2.jpg'
+    ],
+    vogelwarteUrl: 'https://www.vogelwarte.ch/de/voegel-der-schweiz/mauersegler',
+  },
 ];
